@@ -1,0 +1,51 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #292E3D;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1440px;
+  background: #C9D0E1;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 72px;
+  color: #7884A5;
+}
+
+.image_gallery {
+  margin: 0;
+  min-width: 100%;
+  min-height: 481px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.image_gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.image_container {
+  min-width: 344px;
+  min-height: 344px;
+  background: red;
+  overflow: hidden;
+  border-radius: 55% 0 55% 0;
+}
+.image_container .leaf {
+  border-radius: 55% 0 55% 0;
+}
+.image_container .rounded {
+  border-radius: 50%;
+}
+.image_container img {
+  width: 344px;
+  object-fit: cover;
+  height: 344px;
+}
+
+/*# sourceMappingURL=styles.css.map */

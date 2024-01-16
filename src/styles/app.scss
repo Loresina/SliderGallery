@@ -1,0 +1,181 @@
+
+$white-color: #fff;
+$back-light: #F8FAFF;
+$grey-medium-dark: #7884A5;
+$grey-medium-light: #A2ACC7;
+$grey-dark: #525C7A;
+$grey-light: #C9D0E1;
+$black: #292E3D;
+$green: #4FBA67;
+$main-font: 'Raleway', sans-serif;
+
+
+body {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  background: $black;
+  font-family: $main-font;
+}
+
+.red {
+  background: red;
+}
+
+.main {
+  position: relative;
+  // box-sizing: border-box;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  max-width: 1440px;
+  background: $back-light;
+  // border: 1px solid red;
+}
+
+.main_title {
+  position: relative;
+  margin: 0 550px 57px 40px;
+  // border: 1px solid red;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 70px;
+  letter-spacing: -0.8%;
+  color: $grey-medium-dark;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main_subtitle {
+  display: block;
+  margin-top: 43px;
+  font-weight: 400;
+  font-size: 24px;
+  color: $black;
+}
+
+.scroll_container_subtitle {
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  color: $grey-medium-light;
+}
+
+.scroll_gallery {
+  max-width: 1440px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.scroll_container_min {
+  min-width: 344px;
+}
+
+.scroll_container_big {
+  min-width: 688px;
+}
+
+.scroll_container_img {
+  min-width: 344px;
+  min-height: 344px;
+  overflow: hidden;
+}
+
+.leaf_right {
+  border-radius: 55% 0 55% 0;
+}
+
+.leaf_left {
+  border-radius: 0 55% 0 55%;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.rounded_big {
+  border-radius: calc(344px / 2);
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 344px;
+}
+
+.scroll_container_discription {
+  margin: 30px 8px 28px 8px;
+}
+
+.scroll_container_title {
+    font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.2%;
+  color: $grey-dark;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.scroll_buttons {
+  margin: 12px 32px 0px 32px;
+  max-width: 1376px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_left {
+  min-width: 344px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: start;
+  
+  &::before {
+    content: url('../static/lefttArrow.svg');
+  }
+
+  &:hover {
+    &::before {
+      content: url('../static/leftArrowHug.svg');
+    }
+
+  }
+}
+
+.button_right {
+  min-width: 344px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: end;
+  
+  &::before {
+    content: url('../static/rightArrow.svg');
+  }
+
+  &:hover {
+    &::before {
+      content: url('../static/rightArrowHug.svg');
+    }
+
+  }
+}
