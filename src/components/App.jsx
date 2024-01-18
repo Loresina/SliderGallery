@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+// import FastClick from 'react-fastclick';
 import '../styles/app.scss';
 import mockData from '../../mockData';
 
@@ -54,9 +55,7 @@ function App() {
   };
 
   const horizontalScroll = (e) => {
-    // console.log('крутится мышь', e.deltaY);
     const container = e.currentTarget;
-
     if (container.scrollLeft + container.offsetWidth === container.scrollWidth
       || container.scrollLeft === 0) {
       container.scrollLeft = 315;
@@ -94,6 +93,7 @@ function App() {
   };
 
   return (
+  // <FastClick>
     <div className="wrapper">
 
       <div className="main">
@@ -106,7 +106,7 @@ function App() {
           </span>
         </div>
 
-        <div className="scroll_gallery" ref={ref} onWheel={(e) => horizontalScroll(e)}>
+        <div className="scroll_gallery" ref={ref} onWheel={() => horizontalScroll()}>
           {info.map((item) => (
             <div key={item.id} className={item.title.length < 35 ? 'scroll_container_min' : 'scroll_container_big'}>
               <div className={`scroll_container_img ${item.title.length < 35 ? randonForm() : 'rounded_big'}`}>
@@ -121,13 +121,16 @@ function App() {
         </div>
 
         <div className="scroll_buttons">
-          <button type="button" className="button_left" alt="Листать влево" onClick={() => scrollLeft()} />
+          <button type="button" className="button_left" alt="Листать влево" onClick={(e) => scrollLeft(e)} />
           <button type="button" className="button_right" alt="Листать вправо" onClick={() => scrollRight()} />
         </div>
 
       </div>
 
     </div>
+
+  // </FastClick>
+
   );
 }
 

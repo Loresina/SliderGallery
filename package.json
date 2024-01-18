@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-fastclick": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",

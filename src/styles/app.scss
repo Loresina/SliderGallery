@@ -75,6 +75,7 @@ a {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+
   // scroll-snap-type: x mandatory;
 
   &::-webkit-scrollbar {
@@ -97,11 +98,11 @@ a {
 }
 
 .leaf_right {
-  border-radius: 55% 0 55% 0;
+  border-radius: 55% 0;
 }
 
 .leaf_left {
-  border-radius: 0 55% 0 55%;
+  border-radius: 0 55%;
 }
 
 .rounded {
@@ -125,7 +126,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   gap: 6px;
-  margin: 25px 8px 0 8px;
+  margin: 25px 8px 0;
 }
 
 .scroll_container_title {
@@ -148,7 +149,7 @@ img {
 }
 
 .scroll_buttons {
-  margin: 11px 32px 0px 32px;
+  margin: 11px 32px 0;
   max-width: 1376px;
   display: flex;
   justify-content: space-between;
@@ -237,7 +238,6 @@ img {
 
 
 @media(width <= 1210px) {
-
   .main_titles {
     margin-right: 250px;
     margin-bottom: 45px;
@@ -260,7 +260,6 @@ img {
 
 
 @media(width <= 1040px) {
-
   .main_titles {
     margin-right: 60px;
     margin-bottom: 45px;
@@ -287,9 +286,8 @@ img {
 }
 
 @media(width <= 700px) {
-
   .main_titles {
-    margin: 0 20px 20px 15px;
+    margin: 0 15px 15px;
     text-align: center;
   }
 
@@ -323,7 +321,6 @@ img {
   }
 
   .button_left {
-    
     &::before {
       content: url('../static/lefttArrow_mini.svg');
     }
@@ -333,6 +330,10 @@ img {
         content: url('../static/leftArrowHug_mini.svg');
       }
     }
+  }
+
+  .scroll_buttons {
+    margin: 11px 15px 0;
   }
   
   .button_right {
