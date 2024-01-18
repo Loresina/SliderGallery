@@ -9,7 +9,7 @@
 
 ### You can try it
 
-<code>You can follow the link and try to use [Slider gallery]()
+<code>You can follow the link and try to use [Slider gallery](https://slider-gallery.vercel.app/)
 </code>
 
 <!-- ### Maintability: -->

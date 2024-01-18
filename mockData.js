@@ -18,7 +18,7 @@ const data = [
     types: 'types__2',
     img: 'https://celes.club/uploads/posts/2021-12/1640090810_4-celes-club-p-zhivotnie-v-derevne-zhivotnie-krasivo-foto-4.jpg',
     title: 'Как повысить удои коров: факторы, от которых зависит молочная продуктивность',
-    date: '12 февраля 2024',
+    date: '22 ноября 2023',
   },
   {
     id: 4,

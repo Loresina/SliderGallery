@@ -21,7 +21,7 @@ function App() {
 
     setTimeout(() => {
       if (ref.current) {
-        ref.current.scrollLeft += 304;
+        ref.current.scrollLeft += 315;
       }
     }, 100);
   }, []);
@@ -54,50 +54,77 @@ function App() {
   };
 
   const horizontalScroll = (e) => {
+    // console.log('крутится мышь', e.deltaY);
     const container = e.currentTarget;
-    container.scrollLeft += e.deltaY;
+
+    if (container.scrollLeft + container.offsetWidth === container.scrollWidth
+      || container.scrollLeft === 0) {
+      container.scrollLeft = 315;
+    } else {
+      container.scrollLeft += e.deltaY * 6;
+    }
+
+    // console.log('container.scrollWidth', container.scrollWidth);
+    // console.log('container.clientWidth', container.clientWidth);
+    // console.log('container.offsetWidth', container.offsetWidth);
+    // console.log('container.scrollLeft', container.scrollLeft);
+
+    return false;
   };
 
   const scrollLeft = () => {
-    const gallery = document.getElementsByClassName('scroll_gallery');
-    gallery[0].scrollLeft -= 304;
-    console.log('влево', gallery);
+    const gallery = document.getElementsByClassName('scroll_gallery')[0];
+
+    if (gallery.scrollLeft === 0) {
+      gallery.scrollLeft = 315;
+    } else {
+      gallery.scrollLeft -= 315;
+    }
   };
 
   const scrollRight = () => {
-    const gallery = document.getElementsByClassName('scroll_gallery');
-    gallery[0].scrollLeft += 304;
-    console.log('влево');
+    const gallery = document.getElementsByClassName('scroll_gallery')[0];
+    const containerWidth = gallery.offsetWidth;
+
+    if (gallery.scrollLeft + containerWidth === gallery.scrollWidth) {
+      gallery.scrollLeft = 315;
+    } else {
+      gallery.scrollLeft += 315;
+    }
   };
 
   return (
-    <div className="main">
-      <div className="main_title">
-        <h1>Полезные материалы</h1>
-        <span className="main_subtitle">
-          Собрали для вас полезные исследования схемы кормления и другие
-          материалы, которые пригодятся для лучших результатов на вашем
-          хозяйстве
-        </span>
-      </div>
+    <div className="wrapper">
 
-      <div className="scroll_gallery" ref={ref} onWheel={(e) => horizontalScroll(e)}>
-        {info.map((item) => (
-          <div key={item.id} className={item.title.length < 35 ? 'scroll_container_min' : 'scroll_container_big'}>
-            <div className={`scroll_container_img ${item.title.length < 35 ? randonForm() : 'rounded_big'}`}>
-              <img src={item.img} alt={item.title} />
-            </div>
-            <div className="scroll_container_discription">
-              <a href="#"><h2 className="scroll_container_title">{item.title}</h2></a>
-              <span className="scroll_container_subtitle">{item.date}</span>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="main">
+        <div className="main_titles">
+          <h1>Полезные материалы</h1>
+          <span className="main_subtitle">
+            Собрали для вас полезные исследования схемы кормления и другие
+            материалы, которые пригодятся для лучших результатов на вашем
+            хозяйстве
+          </span>
+        </div>
 
-      <div className="scroll_buttons">
-        <button type="button" className="button_left" alt="Листать влево" onClick={() => scrollLeft()} />
-        <button type="button" className="button_right" alt="Листать вправо" onClick={() => scrollRight()} />
+        <div className="scroll_gallery" ref={ref} onWheel={(e) => horizontalScroll(e)}>
+          {info.map((item) => (
+            <div key={item.id} className={item.title.length < 35 ? 'scroll_container_min' : 'scroll_container_big'}>
+              <div className={`scroll_container_img ${item.title.length < 35 ? randonForm() : 'rounded_big'}`}>
+                <img src={item.img} alt={item.title} />
+              </div>
+              <div className="scroll_container_discription">
+                <a href="#"><h2 className="scroll_container_title">{item.title}</h2></a>
+                <span className="scroll_container_subtitle">{item.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="scroll_buttons">
+          <button type="button" className="button_left" alt="Листать влево" onClick={() => scrollLeft()} />
+          <button type="button" className="button_right" alt="Листать вправо" onClick={() => scrollRight()} />
+        </div>
+
       </div>
 
     </div>
